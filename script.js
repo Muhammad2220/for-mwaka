@@ -1,52 +1,42 @@
-const introText = "I made this little page just to make you smile 😊";
+const hearts = document.getElementById("hearts");
+const sparkles = document.getElementById("sparkles");
 
-const messages = [
-  "You have a beautiful smile ❤️",
-  "The world is better with you in it 🌸",
-  "You are truly amazing ✨",
-  "Never forget how special you are 💖",
-  "Someone is smiling because of you today 😊",
-  "You deserve happiness every day ☀️",
-  "This is your reminder: you're doing great ❤️"
-];
+// Floating Hearts
 
-let introIndex = 0;
-let msgIndex = 0;
+for(let i=0;i<30;i++){
 
-const introEl = document.getElementById("intro");
-const msgEl = document.getElementById("message");
+    const heart=document.createElement("div");
 
-// Type intro
-function typeIntro() {
-  if (introIndex < introText.length) {
-    introEl.innerHTML += introText.charAt(introIndex);
-    introIndex++;
-    setTimeout(typeIntro, 50);
-  }
+    heart.className="heart";
+
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(15+Math.random()*25)+"px";
+
+    heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+    heart.style.animationDelay=Math.random()*5+"s";
+
+    hearts.appendChild(heart);
+
 }
 
-// Loop messages
-function showMessage() {
-  msgEl.style.opacity = 0;
+// Sparkles
 
-  setTimeout(() => {
-    msgEl.innerHTML = messages[msgIndex];
-    msgEl.style.opacity = 1;
+for(let i=0;i<40;i++){
 
-    msgIndex++;
-    if (msgIndex >= messages.length) msgIndex = 0;
+    const star=document.createElement("div");
 
-  }, 400);
-}
+    star.className="sparkle";
 
-setTimeout(() => {
-  typeIntro();
-  showMessage();
-  setInterval(showMessage, 3000);
-}, 500);
+    star.style.left=Math.random()*100+"vw";
 
-function restart() {
-  introEl.innerHTML = "";
-  introIndex = 0;
-  typeIntro();
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDelay=Math.random()*2+"s";
+
+    sparkles.appendChild(star);
+
 }
