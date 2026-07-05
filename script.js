@@ -1,17 +1,31 @@
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
-const message = document.getElementById("message");
 
-// Make the "No" button run away 😆
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 100);
+// Move function (reusable)
+function moveButton() {
+    const padding = 80;
 
+    const x = Math.random() * (window.innerWidth - padding);
+    const y = Math.random() * (window.innerHeight - padding);
+
+    noBtn.style.position = "absolute";
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
+}
+
+// Desktop: hover
+noBtn.addEventListener("mouseover", moveButton);
+
+// Mobile: touch (IMPORTANT FIX)
+noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // stops delay / double tap issues
+    moveButton();
 });
 
-// When they say YES 💖
+// Extra safety: if they manage to click it 😭
+noBtn.addEventListener("click", moveButton);
+
+// YES button
 yesBtn.addEventListener("click", () => {
     document.body.innerHTML = `
         <div style="display:flex;justify-content:center;align-items:center;height:100vh;
