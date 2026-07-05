@@ -1,42 +1,25 @@
-const hearts = document.getElementById("hearts");
-const sparkles = document.getElementById("sparkles");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const message = document.getElementById("message");
 
-// Floating Hearts
+// Make the "No" button run away 😆
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
 
-for(let i=0;i<30;i++){
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
 
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML="❤";
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.fontSize=(15+Math.random()*25)+"px";
-
-    heart.style.animationDuration=(5+Math.random()*5)+"s";
-
-    heart.style.animationDelay=Math.random()*5+"s";
-
-    hearts.appendChild(heart);
-
-}
-
-// Sparkles
-
-for(let i=0;i<40;i++){
-
-    const star=document.createElement("div");
-
-    star.className="sparkle";
-
-    star.style.left=Math.random()*100+"vw";
-
-    star.style.top=Math.random()*100+"vh";
-
-    star.style.animationDelay=Math.random()*2+"s";
-
-    sparkles.appendChild(star);
-
-}
+// When they say YES 💖
+yesBtn.addEventListener("click", () => {
+    document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;
+        font-family:Arial;background:linear-gradient(135deg,#a1ffce,#faffd1);text-align:center;">
+            <div>
+                <h1>Yay!! 😭💖</h1>
+                <p>You just made someone very happy hehe</p>
+            </div>
+        </div>
+    `;
+});
