@@ -2,17 +2,58 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Important Question 😳</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mwaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="card">
-    <h1>Do you think I'm kinda awesome? 😏</h1>
-    <button id="yes">Yes 😍</button>
-    <button id="no">No 🙃</button>
-    <div id="message"></div>
-</div>
+<canvas id="bg-stars"></canvas>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <span class="eyebrow">a small project, written for Mercy</span>
+  <h1>Every star up there<br>has a story. <em>So do we.</em></h1>
+  <p>I built this instead of buying something — some things are better made than bought. Scroll down.</p>
+  <div class="scroll-hint">
+    <span>↓ keep going ↓</span>
+  </div>
+</section>
+
+<!-- ============ CONSTELLATION ============ -->
+<section class="constellation-wrap">
+  <h2 class="section-title">Our Constellation</h2>
+  <p class="section-sub">Tap a star to light up a memory</p>
+
+  <svg id="sky" viewBox="0 0 900 460"></svg>
+
+  <div class="memory-card placeholder" id="memoryCard">
+    <p>Choose a star above ✨</p>
+  </div>
+</section>
+
+<!-- ============ LETTER ============ -->
+<section class="letter-wrap">
+  <div class="envelope" id="envelope" role="button" aria-label="Open the letter">
+    <div class="envelope-body">
+      <div class="seal">M</div>
+    </div>
+  </div>
+  <div class="envelope-hint" id="envelopeHint">click to open</div>
+
+  <div class="letter-paper" id="letterPaper">
+    <h3>To Mwaka,</h3>
+    <p>I'm not always good with words when I say them out loud, so I built you something instead — a small piece of the sky, made of code, but meant entirely for you.</p>
+    <p>Every star up there is a moment. Every line connecting them is a choice I keep making, over and over, without even having to think about it — the choice to be here, with you.</p>
+    <p>You make ordinary days feel like something worth remembering. I don't know how you do that, but I hope you know how much it means.</p>
+    <p>This is just the beginning of the constellation. There's so much more sky left, and I want to fill every bit of it with you.</p>
+    <div class="sign">— yours, always</div>
+  </div>
+</section>
+
+<footer>made with code, because that's the language I know best</footer>
 
 <script src="script.js"></script>
 </body>
